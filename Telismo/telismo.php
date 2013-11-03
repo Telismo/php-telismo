@@ -47,7 +47,7 @@ abstract class Telismo
                   'name'=>$params['number'],
                   'instruction'=>array(
                     'sample'=>$params['sample'],
-                    'text'=>$params['text']
+                    'text'=>$params['description']
                   ),
                   'fields'=>$params['fields'],
                   'type'=>$params['type'],
