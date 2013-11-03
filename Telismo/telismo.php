@@ -37,7 +37,8 @@ abstract class Telismo
   }
 
   public static function processCallback() {
-    echo "Process Callback";
+    $output = file_get_contents('php://input');
+    return json_decode($output);
   }
 
   public static function createTask($params) {
@@ -53,7 +54,7 @@ abstract class Telismo
                   'callback'=>$params['callback']
                 );
 
-    self::curlUrl("create", $request);
+    return self::curlUrl("create", $request);
   }
 
   private static function curlUrl($method, $params) {
@@ -69,9 +70,7 @@ abstract class Telismo
 
     $response = curl_exec( $ch );
 
-    echo $response;
-
-    return $response;
+    return json_decode($response);
   }
 }
 ?>
