@@ -57,6 +57,14 @@ abstract class Telismo
     return self::curlUrl("create", $request);
   }
 
+  public static function cancelTask($ids) {
+    $request =  array(
+                  'id'=>$ids
+                );
+
+    return self::curlUrl("cancel", $request);
+  }
+
   private static function curlUrl($method, $params) {
     $url = self::$apiBase . "/api/v1/$method";
 
