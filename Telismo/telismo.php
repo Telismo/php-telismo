@@ -2,7 +2,7 @@
 abstract class Telismo
 {
   public static $apiKey;
-  public static $apiBase = 'http://localhost:3000';
+  public static $apiBase = 'http://telismo.com';
   public static $apiVersion = null;
   public static $verifySslCerts = true;
   
